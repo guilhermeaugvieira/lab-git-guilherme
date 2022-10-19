@@ -22,6 +22,20 @@ long int somatoriaRecursiva(int x,int y){
  }
 }
 
+//produtorioRecursivo
+long int produtoriaRecursiva(int x, int y){
+ if(y>=x){
+   //long int produto=y;
+   long int resultado = produtoriaRecursiva(x,y-1);
+   printf("%ld - ", resultado);
+   return y*resultado;  
+ }
+
+ else{
+   return 1;
+ }
+}
+
 
 int main(void){
   int x = 0, y = 0;
@@ -43,6 +57,7 @@ int main(void){
    scanf("%d",&y);
  
    printf("\nA somatória é: %ld",somatoriaRecursiva(x,y));
+   printf("\nA produtória é: %ld",produtoriaRecursiva(x,y));
   
  return 0;
 }
